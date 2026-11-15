@@ -143,23 +143,23 @@ private:
         //                            name    price  pace cons aggr tyre wet
         driverShop[0] = Driver("Lance Troll", 0,     40,  49,  50,  50,  50);
         driverShop[1] = Driver("Charles Wall",80000, 62,  60,  55,  58,  55);
-        driverShop[2] = Driver("Yukimon",     160000,72,  70,  50,  70,  65);
+        driverShop[2] = Driver("Kimi Suryavanshi",160000,72,  70,  50,  70,  65);
         driverShop[3] = Driver("Sir Lew",     280000,92,  85,  89,  72,  85);
         driverShop[4] = Driver("Mad Max",     450000,95,  85,  99,  85,  98);
 
-        //                                    name                 price  reliability setup
-        mechanicShop[0] = MechanicCrew("Garage Hands",           0,    40,  40);
-        mechanicShop[1] = MechanicCrew("Pit Lane Pros",      40000,    55,  55);
-        mechanicShop[2] = MechanicCrew("Torque Team",        90000,    70,  65);
-        mechanicShop[3] = MechanicCrew("Apex Works",        150000,    82,  80);
-        mechanicShop[4] = MechanicCrew("Elite Engineering", 250000,    95,  92);
+        //                                    name          price  rel setup
+        mechanicShop[0] = MechanicCrew("Raju Mistri",       0,     40,  40);
+        mechanicShop[1] = MechanicCrew("Megatron Mechanics",40000, 55,  55);
+        mechanicShop[2] = MechanicCrew("Hammer Heads",      90000, 70,  65);
+        mechanicShop[3] = MechanicCrew("Transformers",      150000,82,  80);
+        mechanicShop[4] = MechanicCrew("DTU Mech Passout",  250000,95,  92);
 
-        //                              name                  price  speed consistency
-        pitCrewShop[0] = PitCrew("Weekend Crew",             0,    40,  40);
-        pitCrewShop[1] = PitCrew("Quick Fix Crew",       40000,    55,  55);
-        pitCrewShop[2] = PitCrew("Rapid Wheels",         90000,    70,  68);
-        pitCrewShop[3] = PitCrew("Lightning Crew",      150000,    82,  80);
-        pitCrewShop[4] = PitCrew("Perfect Stop Crew",   250000,    95,  95);
+        //                              name         price  speed consistency
+        pitCrewShop[0] = PitCrew("SlowpokeCrew",      0,     40,  40);
+        pitCrewShop[1] = PitCrew("Quick Fix Crew",    40000, 55,  55);
+        pitCrewShop[2] = PitCrew("Rapid Wheels",      90000, 70,  68);
+        pitCrewShop[3] = PitCrew("Wheel Gun Frantics",150000,82,  80);
+        pitCrewShop[4] = PitCrew("Lightening McQueen",250000,95,  95);
     }
 
     // Builds one AI team. Levels: e = engine, pu = power unit, fw = front wing, rw = rear wing
@@ -174,16 +174,16 @@ private:
     // They are listed from strongest to weakest.
     void createAiTeams() {
         //                       idx  team name         driver (name, price, pace, cons, aggr, tyre, wet)       E PU FW RW  mech pit
-        addAiTeam(0, "Crimson Arrow",  Driver("Lars Eriksen",  0, 88, 84, 62, 78, 72),  5, 4, 5, 4,  4, 4);
-        addAiTeam(1, "Silver Falcon",  Driver("Marco Bellini", 0, 84, 80, 70, 74, 66),  4, 5, 4, 4,  3, 4);
-        addAiTeam(2, "Blue Meteor",    Driver("Kenji Mori",    0, 80, 82, 55, 80, 78),  4, 4, 4, 3,  4, 3);
-        addAiTeam(3, "Orange Fox",     Driver("Daniel Ward",   0, 78, 72, 68, 70, 60),  3, 4, 3, 4,  3, 3);
-        addAiTeam(4, "Green Viper",    Driver("Pablo Ortega",  0, 74, 70, 75, 64, 62),  3, 3, 4, 3,  2, 3);
-        addAiTeam(5, "Black Stallion", Driver("Hugo Laurent",  0, 70, 72, 58, 72, 64),  3, 3, 3, 3,  2, 2);
-        addAiTeam(6, "Yellow Hornet",  Driver("Ivan Petrov",   0, 66, 60, 72, 58, 55),  2, 3, 2, 3,  2, 1);
-        addAiTeam(7, "White Wolf",     Driver("Sam Okafor",    0, 62, 64, 55, 62, 60),  2, 2, 3, 2,  1, 2);
-        addAiTeam(8, "Purple Raven",   Driver("Luca Rossi",    0, 58, 55, 60, 52, 50),  2, 2, 2, 1,  1, 1);
-        addAiTeam(9, "Teal Shark",     Driver("Arjun Mehta",   0, 54, 52, 50, 50, 48),  1, 2, 1, 2,  1, 0);
+        addAiTeam(0, "Mercedes",  Driver("George Unlucky",  0, 88, 84, 62, 78, 72),  5, 4, 5, 4,  4, 4);
+        addAiTeam(1, "Ferrari",  Driver("Carlos Sainz", 0, 84, 80, 70, 74, 66),  4, 5, 4, 4,  3, 4);
+        addAiTeam(2, "Mclaren",    Driver("Lando Papaya",    0, 80, 82, 55, 80, 78),  4, 4, 4, 3,  4, 3);
+        addAiTeam(3, "Redbull",     Driver("Isacc Newton",   0, 78, 72, 68, 70, 60),  3, 4, 3, 4,  3, 3);
+        addAiTeam(4, "Williams",    Driver("Alex Albon",  0, 74, 70, 75, 64, 62),  3, 3, 4, 3,  2, 3);
+        addAiTeam(5, "Aston Martin", Driver("Rookie Alonso",  0, 70, 72, 58, 72, 64),  3, 3, 3, 3,  2, 2);
+        addAiTeam(6, "Hass",  Driver("Olive Bear",   0, 66, 60, 72, 58, 55),  2, 3, 2, 3,  2, 1);
+        addAiTeam(7, "Alpine",     Driver("Pear Gas",    0, 62, 64, 55, 62, 60),  2, 2, 3, 2,  1, 2);
+        addAiTeam(8, "Apex Racing",   Driver("Brad Pitt",    0, 58, 55, 60, 52, 50),  2, 2, 2, 1,  1, 1);
+        addAiTeam(9, "White Bull",     Driver("Arvind Mehta",   0, 54, 52, 50, 50, 48),  1, 2, 1, 2,  1, 0);
     }
 };
 
