@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>F1 Team Simulator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ TOP BAR (always visible) ============ -->
+<header id="topbar">
+  <div class="logo">F1 TEAM SIMULATOR</div>
+  <div class="topright">
+    <div class="money" id="money">$0</div>
+    <button class="btn small" id="homeBtn">HOME</button>
+  </div>
+</header>
+<div class="kerb"></div>
+
+<!-- Shown when the C++ server can't be reached -->
+<div id="offline" class="offline" hidden>CANNOT REACH THE SERVER. IS f1server RUNNING?</div>
+
+<main>
+
+  <!-- ============ HOME ============ -->
+  <section class="screen" id="screen-home">
+    <div class="team-row" id="teamNameBox"></div>
+
+    <div class="home-grid">
+      <div class="panel" id="homeDriver"></div>
+
+      <div class="panel center">
+        <canvas id="homeCar" class="sprite"></canvas>
+        <div id="homeCrews" class="crews"></div>
+      </div>
+
+      <div class="panel" id="homeCarStats"></div>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="btn big" data-go="garage">GARAGE</button>
+      <button class="btn big red" data-go="tracks">RACE</button>
+      <button class="btn big" data-go="market">MARKET</button>
+    </div>
+  </section>
+
+  <!-- ============ GARAGE ============ -->
+  <section class="screen" id="screen-garage" hidden>
+    <h2 class="title">GARAGE</h2>
+    <div class="garage-grid">
+      <div class="panel" id="garageStats"></div>
+      <div class="panel center"><canvas id="garageCar" class="sprite"></canvas></div>
+    </div>
+    <h3 class="subtitle">UPGRADE CAR PARTS</h3>
+    <div class="cards" id="partButtons"></div>
+  </section>
+
+  <!-- ============ MARKET ============ -->
+  <section class="screen" id="screen-market" hidden>
+    <h2 class="title">MARKET</h2>
+    <div class="tabs">
+      <button class="tab" data-tab="driver">DRIVER</button>
+      <button class="tab" data-tab="pit">PIT CREW</button>
+      <button class="tab" data-tab="mechanic">MECHANIC</button>
+    </div>
+    <div class="cards" id="marketGrid"></div>
+  </section>
+
+  <!-- ============ TRACK SELECT ============ -->
+  <section class="screen" id="screen-tracks" hidden>
+    <h2 class="title">CHOOSE A TRACK</h2>
+    <p class="hint">CLICK A CARD TO PICK THE CIRCUIT FOR THIS RACE.</p>
+    <div class="cards" id="trackGrid"></div>
+  </section>
+
+  <!-- ============ TYRE SELECT ============ -->
+  <section class="screen" id="screen-tyres" hidden>
+    <h2 class="title">CHOOSE TYRES</h2>
+    <div class="tyre-layout">
+      <div class="panel" id="trackInfo"></div>
+      <div>
+        <h3 class="subtitle">CHOOSE TYRE COMPOUND</h3>
+        <div class="tyre-grid" id="tyreGrid"></div>
+        <div class="row-buttons">
+          <button class="btn" id="backToTracks">BACK</button>
+          <button class="btn big red" id="startRace" disabled>START RACE</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RACE ANIMATION ============ -->
+  <section class="screen" id="screen-race" hidden>
+    <h2 class="title" id="raceTitle">RACE</h2>
+    <div class="panel flush"><canvas id="raceCanvas"></canvas></div>
+    <div class="row-buttons"><button class="btn" id="skipBtn">SKIP</button></div>
+  </section>
+
+  <!-- ============ RESULTS ============ -->
+  <section class="screen" id="screen-results" hidden>
+    <h2 class="title" id="resultsTitle">RESULTS</h2>
+    <div class="podium" id="podium"></div>
+    <div class="panel summary" id="summary"></div>
+    <div class="panel flush">
+      <table id="resultsTable">
+        <thead>
+          <tr><th>POS</th><th>TEAM</th><th>DRIVER</th><th>TYRE</th><th>STOPS</th><th>STATUS</th><th>PRIZE</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn" data-go="home">HOME</button>
+      <button class="btn" data-go="garage">GARAGE</button>
+      <button class="btn big red" data-go="tracks">NEXT RACE</button>
+    </div>
+  </section>
+
+</main>
+
+<!-- small pop-up message at the bottom of the screen -->
+<div id="toast" class="toast" hidden></div>
+
+<script src="script.js"></script>
+</body>
+</html>
