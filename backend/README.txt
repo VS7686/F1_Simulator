@@ -19,8 +19,7 @@ FILES
   Race.h          simulate(): one score per team, sorted = finishing order
                   (all tuning numbers are constants at the top)
   Team.h          a team = driver + car + mechanic crew + pit crew + money
-  Car.h           composition: a car has 4 parts
-  CarPart.h       abstract base + Engine, PowerUnit, FrontWing, RearWing
+  Car.h           Car class (composition) and CarPart classes (base, Engine, PowerUnit, FrontWing, RearWing)
   Driver.h  MechanicCrew.h  PitCrew.h  Tyre.h  Circuit.h   data classes
   httplib.h       third-party single-file web server library (cpp-httplib 0.18.0)
 
