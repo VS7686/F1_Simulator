@@ -142,7 +142,7 @@ string tracksJson(const Game& g) {
     return out + "]}";
 }
 
-// The 5 tyres, with the fit hint for one chosen track
+// The 5 tyres (stats only, no track-fit score)
 string tyresJson(const Game& g, int trackIndex) {
     const Circuit& c = g.circuits[trackIndex];
     string out = "{\"tyres\":[";
@@ -156,9 +156,7 @@ string tyresJson(const Game& g, int trackIndex) {
              + ",\"wear\":" + to_string(t.getWear())
              + ",\"tempMin\":" + to_string(t.getTempMin())
              + ",\"tempMax\":" + to_string(t.getTempMax())
-             + ",\"fit\":" + num(t.getTrackFit(c))
-             + ",\"pitStops\":" + to_string(t.getPitStops(c))
-             + ",\"hint\":" + str(t.getHint(c)) + "}";
+             + ",\"pitStops\":" + to_string(t.getPitStops(c)) + "}";
     }
     return out + "]}";
 }

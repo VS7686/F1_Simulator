@@ -148,8 +148,8 @@ private:
         driverShop[4] = Driver("Mad Max",     450000,95,  85,  99,  85,  98);
 
         //                                    name          price  rel setup
-        mechanicShop[0] = MechanicCrew("Raju Mistri",       0,     40,  40);
-        mechanicShop[1] = MechanicCrew("Megatron Mechanics",40000, 55,  55);
+        mechanicShop[0] = MechanicCrew("Big Mech",       0,     40,  40);
+        mechanicShop[1] = MechanicCrew("Raju Mechanics",40000, 55,  55);
         mechanicShop[2] = MechanicCrew("Hammer Heads",      90000, 70,  65);
         mechanicShop[3] = MechanicCrew("Transformers",      150000,82,  80);
         mechanicShop[4] = MechanicCrew("DTU Mech Passout",  250000,95,  92);

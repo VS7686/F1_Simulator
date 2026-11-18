@@ -437,13 +437,11 @@ async function renderTyres() {
   const grid = $('tyreGrid');
   grid.innerHTML = '';
   data.tyres.forEach(t => {
-    const fitClass = 'fit-' + t.hint.split(' ')[0].toLowerCase();   // Great / Good / Risky / Poor
     const btn = document.createElement('button');
     btn.className = 'tyre' + (selectedTyre === t.id ? ' selected' : '');
     btn.appendChild(tyreIcon(t.id));
     const text = document.createElement('div');
     text.innerHTML = `<div class="tname">${esc(t.name.toUpperCase())}</div>
-      <div class="${fitClass}">${esc(t.hint.toUpperCase())} (${Math.round(t.fit)}/100)</div>
       <div class="tinfo">DRY GRIP ${t.dryGrip} | WET GRIP ${t.wetGrip} | WEAR ${t.wear} | BEST ${t.tempMin}-${t.tempMax} C | PIT STOPS ${t.pitStops}</div>`;
     btn.appendChild(text);
     btn.onclick = () => {

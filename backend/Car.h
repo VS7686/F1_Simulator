@@ -1,11 +1,6 @@
-// ============================================================
-// Car.h
-// COMPOSITION example: a Car "has" four parts.
-// The car keeps the parts as normal member objects, and
-// getPart(i) gives back a CarPart pointer so we can loop over
+// The car keeps the parts as normal member objects, and getPart(i) gives back a CarPart pointer so we can loop over
 // them and call the right getContribution() for each
-// (this is POLYMORPHISM in action).
-// ============================================================
+
 #ifndef CAR_H
 #define CAR_H
 
