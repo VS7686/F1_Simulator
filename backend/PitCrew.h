@@ -1,10 +1,4 @@
-// ============================================================
-// PitCrew.h
-// The crew that changes the tyres in the pits.
-// Bought from the market. Stats are 1-100.
-//   speed       : how fast a tyre change is (less time lost per stop)
-//   consistency : how rarely a stop goes wrong (less time lost per stop)
-// ============================================================
+
 #ifndef PITCREW_H
 #define PITCREW_H
 
@@ -39,8 +33,8 @@ public:
     int getSpeed() const { return speed; }
     int getConsistency() const { return consistency; }
 
-    // How many score points ONE pit stop costs this crew (between 1 and 3).
-    // Fast + consistent crew = about 1 point, slow + sloppy crew = about 3 points.
+    // How many score points one pit stop costs this crew (between 1 and 3).
+    
     double getTimeLostPerStop() const {
         return 1.0 + 1.2 * (100 - speed) / 100.0 + 0.8 * (100 - consistency) / 100.0;
     }

@@ -1,10 +1,4 @@
-// ============================================================
-// Team.h
-// A Team is the player OR one of the 10 AI opponents.
-// It "has" a driver, a car, a mechanic crew and a pit crew
-// (composition). The money (budget) is private, so it can only
-// change through spend() and earn().
-// ============================================================
+
 #ifndef TEAM_H
 #define TEAM_H
 
@@ -21,14 +15,14 @@ private:
 
 public:
     string name;
-    bool isPlayer;          // true for the player, false for AI teams
+    bool isPlayer;          // true for the player, false for oponnnent teams
     Driver driver;
     Car car;
     MechanicCrew mechanics;
     PitCrew pitCrew;
-    int tyreChoice;         // index of the chosen tyre (0 = Soft ... 4 = Wet)
+    int tyreChoice;         // index of the chosen tyre (0 = Soft - 4 = Wet)
 
-    // Default constructor
+    
     Team() {
         name = "";
         isPlayer = false;

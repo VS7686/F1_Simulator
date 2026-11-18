@@ -1,12 +1,3 @@
-// ============================================================
-// Game.h
-// The Game class owns everything: the player's team, the 10 AI
-// teams, the circuits, and the market (lists of drivers and crews).
-// The web server (main.cpp) just calls these functions.
-//
-// Functions that can fail return a string:
-//   "" (empty) = it worked,   otherwise = the error message to show.
-// ============================================================
 #ifndef GAME_H
 #define GAME_H
 
@@ -26,15 +17,15 @@ const int NUM_AI_TEAMS = 10;
 
 class Game {
 public:
-    // ---- the market (normal fixed-size arrays) ----
+    //market
     Driver driverShop[NUM_DRIVERS];
     MechanicCrew mechanicShop[NUM_MECHANICS];
     PitCrew pitCrewShop[NUM_PIT_CREWS];
 
-    // ---- the world ----
+    //world
     vector<Circuit> circuits;
     vector<Tyre> tyres;
-    Team aiTeams[NUM_AI_TEAMS]; // the 10 opponents
+    Team opTeams[NUM_AI_TEAMS]; // the 10 opponents
     Team player;                // the player's team
     int raceNumber;             // how many races have been completed
 
@@ -122,7 +113,7 @@ public:
         vector<Team*> allTeams;
         allTeams.push_back(&player);
         for (int i = 0; i < NUM_AI_TEAMS; i++) {
-            allTeams.push_back(&aiTeams[i]);
+            allTeams.push_back(&opTeams[i]);
         }
 
         results = Race::simulate(allTeams, circuits[circuitIndex]);
@@ -167,7 +158,7 @@ private:
                    int mechanicIndex, int pitCrewIndex) {
         Team t(teamName, false, 0, d, mechanicShop[mechanicIndex], pitCrewShop[pitCrewIndex]);
         t.car.setLevels(e, pu, fw, rw);
-        aiTeams[index] = t;
+        opTeams[index] = t;
     }
 
     // The 10 opponents. Their stats are fixed and never change.

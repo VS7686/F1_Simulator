@@ -1,18 +1,9 @@
-// ============================================================
-// Car.h
-// Combines CarPart (abstract base + child parts) and Car (composition).
-//
-// INHERITANCE + POLYMORPHISM:
-//   CarPart (abstract base class)
-//     |-- Engine
-//     |-- PowerUnit
-//     |-- FrontWing
-//     |-- RearWing
-//
+
+
 // COMPOSITION:
 //   Car has 4 parts (Engine, PowerUnit, FrontWing, RearWing).
 //   getPart(i) returns a CarPart pointer for polymorphism.
-// ============================================================
+
 #ifndef CAR_H
 #define CAR_H
 
@@ -23,11 +14,11 @@ using namespace std;
 const int MAX_PART_LEVEL = 5;              // highest level a part can reach
 const int UPGRADE_COST_PER_LEVEL = 30000;  // upgrading from level N costs N * 30000
 
-// ---------------- Base class ----------------
+// Base class 
 class CarPart {
 protected:
     string name;
-    int level;             // 1 .. MAX_PART_LEVEL
+    int level;             // MAX_PART_LEVEL
 
 public:
     CarPart(string n) {
@@ -35,11 +26,11 @@ public:
         level = 1;         // every part starts at level 1
     }
 
-    // A virtual destructor is needed for any class with virtual functions
-    virtual ~CarPart() {}
+    
+    virtual ~CarPart() {}    // Virtual destructer 
 
-    // PURE VIRTUAL functions (= 0): the base class has no code for them,
-    // every child class MUST write its own version.
+    
+    
     virtual double getContribution(const Circuit& c) const = 0;  // 0-100 score on a track
     virtual string getDescription() const = 0;                   // short text for the UI
 
@@ -75,7 +66,7 @@ public:
 
     double getContribution(const Circuit& c) const {
         // multiplier goes from 0.5 (no power needed) to 1.0 (lots of power needed)
-        return getRaw() * (0.5 + c.powerDemand / 200.0);
+        return getRaw() * (0.5 + c.powerDemand / 200.0);             //powerdemand defined for a circuit 
     }
     string getDescription() const { return "Raw power. Best on fast tracks like Monza."; }
 };
@@ -117,7 +108,7 @@ public:
 };
 
 // ---------------- Car ----------------
-// COMPOSITION: A Car has four parts.
+
 class Car {
 private:
     Engine engine;
@@ -127,7 +118,7 @@ private:
 
 public:
     // Get a part by number: 0 = Engine, 1 = Power Unit, 2 = Front Wing, 3 = Rear Wing
-    // Returns a pointer to the BASE class, but it really points to a child object.
+    // Returns a pointer to the BASE class, but it really points to a child object. upcasting 
     CarPart* getPart(int i) {
         if (i == 0) return &engine;
         if (i == 1) return &powerUnit;
@@ -152,7 +143,7 @@ public:
         return total / 4.0;
     }
 
-    // ---- Summary stats (0-100) shown in the "current car stats" box ----
+    // Summary stats (0-100) shown in the "current car stats" box 
     int getPowerStat() const { return engine.getLevel() * 20; }
     int getDownforceStat() const {
         return (frontWing.getLevel() + rearWing.getLevel()) * 10;
@@ -164,7 +155,7 @@ public:
         return (powerUnit.getLevel() + rearWing.getLevel()) * 10;
     }
 
-    // Used to build AI cars: set all four levels at once
+    // Used to build oponent cars: set all four levels at once
     void setLevels(int e, int pu, int fw, int rw) {
         engine.setLevel(e);
         powerUnit.setLevel(pu);

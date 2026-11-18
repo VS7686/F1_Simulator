@@ -1,10 +1,3 @@
-// ============================================================
-// Driver.h
-// A Driver is someone you can hire from the market.
-// Every stat is a number from 1 to 100 (higher = better).
-// The stats are private (encapsulation): the outside world can
-// only READ them through the getter functions.
-// ============================================================
 #ifndef DRIVER_H
 #define DRIVER_H
 
@@ -14,7 +7,7 @@ using namespace std;
 class Driver {
 private:
     string name;
-    int price;           // cost to hire in the market
+    int price;           
     int pace;            // raw speed
     int consistency;     // makes fewer mistakes (less random results)
     int aggression;      // overtakes more, but crashes more often
@@ -22,7 +15,7 @@ private:
     int wetSkill;        // skill driving in the rain
 
 public:
-    // Default constructor: creates an empty driver
+    
     Driver() {
         name = "";
         price = 0;
@@ -33,7 +26,7 @@ public:
         wetSkill = 0;
     }
 
-    // Constructor: sets all the stats
+   
     Driver(string n, int p, int pc, int co, int ag, int tm, int ws) {
         name = n;
         price = p;

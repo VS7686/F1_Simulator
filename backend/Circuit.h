@@ -1,9 +1,4 @@
-// ============================================================
-// Circuit.h
-// A Circuit is a race track. Its numbers are FIXED (they never
-// change during the game). The tyres and car parts read these
-// numbers to decide how well they suit the track.
-// ============================================================
+
 #ifndef CIRCUIT_H
 #define CIRCUIT_H
 
@@ -13,23 +8,23 @@ using namespace std;
 
 class Circuit {
 public:
-    string name;          // e.g. "Monza"
-    string country;       // e.g. "Italy"
-    string description;   // short hint shown to the player
+    string name;          
+    string country;       
+    string description;   
 
-    int    laps;          // number of laps in the race
-    double lengthKm;      // length of one lap in km
+    int    laps;          
+    double lengthKm;      
 
-    int airTemp;          // air temperature in degrees C
-    int trackTemp;        // track surface temperature in degrees C
-    int humidity;         // humidity in percent (0-100)
+    int airTemp;          
+    int trackTemp;       
+    int humidity;         
 
     int abrasiveness;     // how hard the track is on tyres (0-100)
     int downforceDemand;  // how much the track needs wings/downforce (0-100)
     int powerDemand;      // how much the track needs engine power (0-100)
     int rainChance;       // chance of rain in percent (0-100)
 
-    // Constructor: just stores all the values
+    //just stores all the values
     Circuit(string n, string c, string desc, int l, double len,
             int air, int track, int hum,
             int abr, int down, int pow, int rain) {

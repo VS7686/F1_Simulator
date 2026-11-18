@@ -1,10 +1,3 @@
-// ============================================================
-// Tyre.h
-// A Tyre is one tyre compound (Soft, Medium, Hard, Inter, Wet).
-// The important function is getTrackFit(): it gives a 0-100 score
-// for how well this compound suits a given circuit, using the
-// circuit's temperature and rain chance.
-// ============================================================
 #ifndef TYRE_H
 #define TYRE_H
 
@@ -24,7 +17,7 @@ private:
     int wetGrip;   // grip on a WET track (0-100)
     int wear;      // how fast it wears out (higher = more pit stops)
     int tempMin;   // best track temperature range starts here (degrees C)
-    int tempMax;   // ... and ends here
+    int tempMax;   // and ends here
 
 public:
     Tyre(Compound c, string n, int dg, int wg, int w, int tmin, int tmax) {

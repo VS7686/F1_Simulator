@@ -1,12 +1,8 @@
-// ============================================================
-// Race.h
-// The race is NOT played lap by lap. Instead, simulate() gives
+
+// The race is not played lap by lap. Instead, simulate() gives
 // every team a single "race score" and then sorts the teams by it.
-// Highest score = 1st place.
-//
-// All the numbers that control the result are the named
-// constants below, so they are easy to find and tune.
-// ============================================================
+
+
 #ifndef RACE_H
 #define RACE_H
 
