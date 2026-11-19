@@ -309,6 +309,9 @@ int main() {
 
     cout << "F1 Team Simulator running!" << endl;
     cout << "Open http://localhost:8080 in your browser. Press Ctrl+C to stop." << endl;
-    svr.listen("127.0.0.1", 8080);
+    const char* portEnv = getenv("PORT");
+    int port = portEnv ? atoi(portEnv) : 8080;
+
+    svr.listen("0.0.0.0", port);
     return 0;
 }
